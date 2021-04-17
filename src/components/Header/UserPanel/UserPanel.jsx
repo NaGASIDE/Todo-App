@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Modal } from 'utilities/CreateModal/Modal'
 import './style.sass'
 
-export function UserPanel() {
-  return (
+export function UserPanel({className}) {
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  return ( 
     <>
-    <div className='settings'></div>
-    <div className='help'></div>
-    <div className='aboutDev'></div>
-    <div className='user'></div>
+      <div className={`icon ${className}`} onClick={() => setIsOpen(true)} />
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} >
+        Fence Color
+      </Modal>
     </>
   )
 }

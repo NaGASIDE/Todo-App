@@ -3,15 +3,19 @@
   outline: none
   width: 38vh
   border: 0
-  transition-property: background
-  transition-duration: .5s
+  transition-property: background width
   background: #2b3352
   border-radius: .5vh
   &:hover
-    width: 50vh
+    transition-duration: .5s
+    width: 39vh
     background: #ffff 
+  &:not(:hover)
+    transition-duration: .5s
+    width: 38vh
+    background: #2b3352
   &:focus
-    width: 50vh
+    width: 39vh
     background: #ffff 
 
     
