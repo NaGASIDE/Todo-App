@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {Logo} from './Logo/Logo'
 import {Search} from './Search/Search'
 import {UserPanel} from './UserPanel/UserPanel'
-
+import { NavLink} from 'react-router-dom'
 import './style.sass'
+import { LOGIN_ROUTE } from 'utilities/consts';
+import {useAuthState} from 'react-firebase-hooks/auth'
+import {Context} from '../../index'
 
 
 export function Header() {
+  const {auth} = useContext(Context)
+  const [user] = useAuthState(auth)
   const [isOpen, setIsOpen] = useState(false);
    return (
    <div className='header' >
@@ -15,6 +20,12 @@ export function Header() {
      <UserPanel className='settings' />
      <UserPanel className='help'   />
      <UserPanel className='aboutDev'   />
-     <UserPanel className='user'  />
+    {user ?
+    <button className='user' value='выйти' onClick={() => auth.signOut()}  />
+    :
+      <NavLink to={LOGIN_ROUTE} >
+         <button  >Login</button>
+      </NavLink>
+        }
   </div>)
 }
