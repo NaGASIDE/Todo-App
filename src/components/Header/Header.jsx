@@ -21,7 +21,7 @@ export function Header() {
      <UserPanel className='help'   />
      <UserPanel className='aboutDev'   />
     {user ?
-    <button className='user' value='выйти' onClick={() => auth.signOut()}  />
+    <button className='user' onClick={() => auth.signOut()}  >выйти</button>
     :
       <NavLink to={LOGIN_ROUTE} >
          <button  >Login</button>
