@@ -13,10 +13,14 @@ export function Login() {
   }
 
   return (
-    <div>
+    <div className='back' >
+      <div className='loginLogo' ></div>
+      <h1 className='todoTittle' >Bekzat Ashken To-Do</h1>
+      <p className='quote'>When life gives you lemons, make lemonade</p>
       <button className='LogiButton' onClick={login} >
-        Войти с помощью Google
+        sign with google
       </button>
+      <a className='loginLink' href='https://www.toodledo.com/info/whyuse.php#:~:text=One%20of%20the%20most%20important,organized%20and%20stay%20mentally%20focused.' >Why should you use To Do ?</a>
     </div>
   )
 }

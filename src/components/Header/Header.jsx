@@ -8,7 +8,6 @@ import { LOGIN_ROUTE } from 'utilities/consts';
 import {useAuthState} from 'react-firebase-hooks/auth'
 import {Context} from '../../index'
 
-
 export function Header() {
   const {auth} = useContext(Context)
   const [user] = useAuthState(auth)
@@ -16,15 +15,18 @@ export function Header() {
    return (
    <div className='header' >
      <Logo />
+    {user ?
+    <>
      <Search />
      <UserPanel className='settings' />
      <UserPanel className='help'   />
      <UserPanel className='aboutDev'   />
-    {user ?
-    <button className='user' onClick={() => auth.signOut()}  >выйти</button>
+     <button className='buttomExit' onClick={() => auth.signOut()}  >exit</button>
+     </>
     :
       <NavLink to={LOGIN_ROUTE} >
-         <button  >Login</button>
+         <div style={{marginRight: '0.5vh'}} />
+         <button className='buttomLoggin' >Login</button>
       </NavLink>
         }
   </div>)
