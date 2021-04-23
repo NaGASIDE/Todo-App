@@ -1,28 +1,37 @@
-import { privateRoutes, publicRoutes } from 'components/Routes/routes';
-import React, { useContext } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom'
-import { LOGIN_ROUTE, TODO_ROUTE } from 'utilities/consts';
-import {useAuthState} from 'react-firebase-hooks/auth'
-import {Context} from '../../index'
+import React from 'react';
+import { privateRoutes, publicRoutes } from '../Routes/routes';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { LOGIN_ROUTE, TODO_ROUTE } from '../../utilities/consts';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '../../firebase/config'
 
-export function AppRouter() {
-  const {auth} = useContext(Context)
-  const [user] = useAuthState(auth)
-  return user ?
-  (
-    <Switch>
-        {privateRoutes.map(({path, Component}) => 
-          <Route key={path} path={path} component={Component} exact={true} />)}
-        <Redirect to={TODO_ROUTE} />
-    </Switch>
-  )
-  :
-  (
-    <Switch>
-        {publicRoutes.map(({path, Component}) => 
-          <Route key={path} path={path} component={Component} exact={true} />
-        )}
-        <Redirect to={LOGIN_ROUTE} />
-    </Switch>
-  )
-}
+export const AppRouter = () => {
+  const [user] = useAuthState(auth);
+
+  const createRoutes = (routesArray) => {
+    return routesArray.map(({ path, Component }) => (
+      <Route key={path} path={path} component={Component} exact={true} />
+    ));
+  };
+
+  const checkingActiveRoutes = () => {
+    if (user) {
+      return (
+        <>
+          {createRoutes(privateRoutes)}
+          <Redirect to={TODO_ROUTE} />
+        </>
+      );
+    }
+    if (!user) {
+      return (
+        <>
+          {createRoutes(publicRoutes)}
+          <Redirect to={LOGIN_ROUTE} />
+        </>
+      );
+    }
+  };
+
+  return <Switch>{checkingActiveRoutes()}</Switch>;
+};

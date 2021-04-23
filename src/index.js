@@ -1,29 +1,16 @@
-import React, { createContext } from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import {App} from './App';
-import firebase from 'firebase';
-import {firebaseConfig} from './firebase/config'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import { App } from "./App";
+import { BrowserRouter } from "react-router-dom";
 
-firebase.initializeApp(firebaseConfig)
-
-export const Context = createContext(null)
-
-const auth = firebase.auth()
-const firestore = firebase.firestore()
-
-const root = document.getElementById('root')
+const root = document.getElementById("root");
 
 ReactDOM.render(
   <React.StrictMode>
-    <Context.Provider value={{
-      firebase,
-      auth,
-      firestore
-    }} >
-       <App />
-    </Context.Provider>
-  </React.StrictMode>
-,
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
   root
 );

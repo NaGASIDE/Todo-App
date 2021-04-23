@@ -1,4 +1,4 @@
-import { LOGIN_ROUTE, TODO_ROUTE } from "utilities/consts";
+import { LOGIN_ROUTE, TODO_ROUTE } from "../../utilities/consts";
 import { Login } from "../Login/Login";
 import { Main } from '../Main/Main'
 import * as FaIcon  from 'react-icons/fa'

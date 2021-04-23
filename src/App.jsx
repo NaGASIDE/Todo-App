@@ -1,14 +1,13 @@
-import { AppRouter } from 'components/AppRouter/AppRouter'
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import './App.sass'
-import { Header } from './components/Header/Header'
+import React from 'react';
+import { AppRouter } from './components/AppRouter/AppRouter';
+import { Header } from './components/Header/Header';
+import './App.sass';
 
 export const App = () => {
   return (
-    <BrowserRouter>
-     <Header /> 
-     <AppRouter />
-    </BrowserRouter>
-  )
-}
+    <>
+      <Header />
+      <AppRouter />
+    </>
+  );
+};

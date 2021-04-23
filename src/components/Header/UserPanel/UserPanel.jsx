@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'utilities/CreateModal/Modal'
+import { Modal } from '../../../utilities/CreateModal/Modal'
 import './style.sass'
 
 export function UserPanel({className}) {
