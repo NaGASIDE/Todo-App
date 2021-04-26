@@ -10,7 +10,7 @@ export const AppRouter = () => {
 
   const createRoutes = (routesArray) => {
     return routesArray.map(({ path, Component }) => (
-      <Route key={path} path={path} component={Component} exact={true} />
+      <Route key={path} path={path} component={Component} exact/>
     ));
   };
 
@@ -19,7 +19,7 @@ export const AppRouter = () => {
       return (
         <>
           {createRoutes(privateRoutes)}
-          <Redirect to={TODO_ROUTE} />
+          <Redirect to='/todo/tasks' />
         </>
       );
     }

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'
+import { SidebarData } from '../../Routes/routes'
+import { IconContext } from 'react-icons'
 import * as FaIcon from 'react-icons/fa'
 import * as AiIcon from 'react-icons/ai'
-import { Link } from 'react-router-dom'
-import {SidebarData} from '../../Routes/routes'
 import './Navbar.sass'
-import { IconContext } from 'react-icons'
 
 export function Navbar() {
 
@@ -41,4 +41,4 @@ export function Navbar() {
     </IconContext.Provider>
     </>
   )
-} 
+}

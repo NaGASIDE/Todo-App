@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import './style.sass'
 import firebase from 'firebase'
 import { auth } from '../../firebase/config'
@@ -8,7 +8,6 @@ export function Login() {
   const login = async () => {
     const provider = new firebase.auth.GoogleAuthProvider()
     const user = await auth.signInWithPopup(provider)
-    console.log(user)
   }
 
   return (
