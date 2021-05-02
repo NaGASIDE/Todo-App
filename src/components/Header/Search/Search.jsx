@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './style.sass'
 
-export class Search extends Component {
+export function Search() {
   render() {
     return (
       <input className='input' />
