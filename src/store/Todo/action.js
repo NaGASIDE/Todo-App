@@ -5,7 +5,7 @@ export const todosActionsTypes = {
 }
 
 export const todoActions = {
-  addTodo: (payload) => ({type: todosActionsTypes.ADD_TODO, payload }),
+  addTodo: (todo) => ({type: todosActionsTypes.ADD_TODO, payload: todo }),
   setTodo: (todoId) => ({type: todosActionsTypes.SET_TODO,  payload: todoId }),
-  deleteTodo: (todo) => ({type: todosActionsTypes.DELETE_TODO, payload:todo })
+  deleteTodo: (todoId) => ({type: todosActionsTypes.DELETE_TODO, payload:todoId })
 }
