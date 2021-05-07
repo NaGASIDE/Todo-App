@@ -11,6 +11,7 @@ import './style.sass';
 export function Header() {
   const [user] = useAuthState(auth);
   const [isOpen, setIsOpen] = useState(false);
+  console.log(user)
   return (
     <div className="header">
       <Logo />
@@ -20,6 +21,8 @@ export function Header() {
           <UserPanel className="settings" />
           <UserPanel className="help" />
           <UserPanel className="aboutDev" />
+          <div style={{background:  ` url(${user.photoURL}) no-repeat`,
+                       backgroundSize: `3.5vh`}} className='user-photo' ></div>
           <button className="buttomExit" onClick={() => auth.signOut()}>
             exit
           </button>
