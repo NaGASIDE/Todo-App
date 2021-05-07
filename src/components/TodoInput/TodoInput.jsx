@@ -17,19 +17,19 @@ export const TodoInput = () => {
         onChange={(e) => {
           setName(e.target.value);
         }}
-      />
-      <button
-        className="add-button"
-        onClick={() => {
-          dispatch(
-            todoActions.addTodo({
-              id: uuid(),
-              name: name,
-            })
-          );
-          setName('');
+        onKeyPress={(e) => {
+          if (e.key == `Enter`) {
+            dispatch(
+              todoActions.addTodo({
+                id: uuid(),
+                name: name,
+              })
+            );
+            setName('');
+          }
         }}
-      >
+      />
+      <button className="add-button" tabIndex={0}>
         ADD
       </button>
     </div>
