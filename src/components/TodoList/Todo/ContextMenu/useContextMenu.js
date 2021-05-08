@@ -4,7 +4,6 @@ export const useContextMenu = () => {
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
   const [showMenu, setShowMenu] = useState(false);
-  const todo = document.getElementsByClassName(`todo`)
 
   const handleContextMenu = useCallback(
     (e) => {

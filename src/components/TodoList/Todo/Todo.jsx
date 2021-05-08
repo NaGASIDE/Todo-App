@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { todoActions } from '../../../store/Todo/action' 
 import { BsCircle, BsPencil } from 'react-icons/bs';
@@ -9,17 +9,13 @@ import { CustomMenu } from './ContextMenu/CustomMenu/CustomMenu'
 import './style.sass';
 
 export const Todo = ({todo}) => {
-  document.addEventListener("contextmenu", (event) => {
-    event.preventDefault();
-  });
-
   let dispatch = useDispatch()
   const [editable, setEditable] = useState(false)
   const [name, setName] = useState(``)
-  const [mouse, setMouse] = useState(false)
-  const [showMenu, setShowMenu] = useState(false) 
+  const [mouse, setMouse] = useState(false) 
+
   return (
-    <div className="todo" onContextMenu={() => setShowMenu(true) } >
+    <div className="todo" >
       <ContextMenu menu={<CustomMenu />} />
       <button className="todo-button check" onMouseOver={() => setMouse(true) } onMouseOut={() => setMouse(false)}  >
         { mouse ? <AiOutlineCheckCircle/> :  <BsCircle />}

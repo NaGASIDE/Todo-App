@@ -34,7 +34,7 @@ export function Navbar() {
               <li key={index} className={item.cName}>
                 <Link to={item.path}>
                   {item.icon}
-                  <span>{item.title} <span>{todos.length}</span> </span>
+                  <span>{item.title} <span>{todos.length < 1 ? `` : todos.length}</span> </span>
                 </Link>
               </li>
             );
