@@ -4,15 +4,23 @@ import { todoActions } from '../../../store/Todo/action'
 import { BsCircle, BsPencil } from 'react-icons/bs';
 import { AiOutlineStar, AiOutlineCheck, AiOutlineCheckCircle } from 'react-icons/ai';
 import { RiDeleteBin6Line } from 'react-icons/ri'
+import { ContextMenu } from './ContextMenu/ContextMenu'
+import { CustomMenu } from './ContextMenu/CustomMenu/CustomMenu'
 import './style.sass';
 
 export const Todo = ({todo}) => {
+  document.addEventListener("contextmenu", (event) => {
+    event.preventDefault();
+  });
+
   let dispatch = useDispatch()
   const [editable, setEditable] = useState(false)
   const [name, setName] = useState(``)
   const [mouse, setMouse] = useState(false)
+  const [showMenu, setShowMenu] = useState(false) 
   return (
-    <div className="todo">
+    <div className="todo" onContextMenu={() => setShowMenu(true) } >
+      <ContextMenu menu={<CustomMenu />} />
       <button className="todo-button check" onMouseOver={() => setMouse(true) } onMouseOut={() => setMouse(false)}  >
         { mouse ? <AiOutlineCheckCircle/> :  <BsCircle />}
       </button>
@@ -32,3 +40,4 @@ export const Todo = ({todo}) => {
     </div>
   );
 };
+
