@@ -11,7 +11,6 @@ import './style.sass';
 export function Header() {
   const [user] = useAuthState(auth);
   const [isOpen, setIsOpen] = useState(false);
-  console.log(user)
   return (
     <div className="header">
       <Logo />

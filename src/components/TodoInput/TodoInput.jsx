@@ -18,7 +18,7 @@ export const TodoInput = () => {
           setName(e.target.value);
         }}
         onKeyPress={(e) => {
-          if (e.key == `Enter`) {
+          if (e.key == `Enter` && name.length > 5) {
             dispatch(
               todoActions.addTodo({
                 id: uuid(),
@@ -29,7 +29,15 @@ export const TodoInput = () => {
           }
         }}
       />
-      <button className="add-button" tabIndex={0}>
+      <button className="add-button" tabIndex={0} onClick={() => {
+        dispatch(
+          todoActions.addTodo({
+            id: uuid(),
+            name: name,
+          })
+        );
+        setName('');
+      }}  >
         ADD
       </button>
     </div>

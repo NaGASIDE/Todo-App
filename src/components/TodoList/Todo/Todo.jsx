@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todoActions } from '../../../store/Todo/action' 
 import { BsCircle, BsPencil } from 'react-icons/bs';

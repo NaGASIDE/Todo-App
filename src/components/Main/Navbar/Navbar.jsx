@@ -9,7 +9,6 @@ import './Navbar.sass'
 
 export function Navbar() {
   let todos = useSelector(state => state)
-  console.log(todos)
 
   const [sidebar, setSidebar] = useState(false)
 
