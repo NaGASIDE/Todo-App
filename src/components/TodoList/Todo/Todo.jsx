@@ -13,9 +13,14 @@ export const Todo = ({todo}) => {
   const [editable, setEditable] = useState(false)
   const [name, setName] = useState(``)
   const [mouse, setMouse] = useState(false) 
+  const [todoFocus, setTodoFocus] = useState(false)
+
+  // Сейчас можно отмечать каждое TODO, не зависимо от того отмнчен ли другой. Сделай так чтобы когда отмечался другой TODO,
+  // у преведущёго стили снимались. Моя ошибка сорян :3
+  // я полумал и придумал способ со следующим числом, скорее всего это нужно делать через store
 
   return (
-    <div className="todo" >
+    <div className={`${todoFocus ? `todo-focus` : `` } todo`} onClick={() => setTodoFocus(!todoFocus)} >
       <ContextMenu menu={<CustomMenu />} />
       <button className="todo-button check" onMouseOver={() => setMouse(true) } onMouseOut={() => setMouse(false)}  >
         { mouse ? <AiOutlineCheckCircle/> :  <BsCircle />}
