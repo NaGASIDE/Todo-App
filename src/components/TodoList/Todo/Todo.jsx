@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { ThemeContext } from '../../Main/Main'
 import { useDispatch } from 'react-redux';
 import { todoActions } from '../../../store/Todo/action' 
 import { BsCircle, BsPencil } from 'react-icons/bs';
@@ -14,13 +15,14 @@ export const Todo = ({todo}) => {
   const [name, setName] = useState(``)
   const [mouse, setMouse] = useState(false) 
   const [todoFocus, setTodoFocus] = useState(false)
+  const theme = useContext(ThemeContext)
 
   // Сейчас можно отмечать каждое TODO, не зависимо от того отмнчен ли другой. Сделай так чтобы когда отмечался другой TODO,
   // у преведущёго стили снимались. Моя ошибка сорян :3
   // я полумал и придумал способ со следующим числом, скорее всего это нужно делать через store
 
   return (
-    <div className={`${todoFocus ? `todo-focus` : `` } todo`} onClick={() => setTodoFocus(!todoFocus)} >
+    <div className={`${todoFocus ? `todo-focus` : `` } todo todo-${theme}`} onClick={() => setTodoFocus(!todoFocus)} >
       <ContextMenu menu={<CustomMenu />} />
       <button className="todo-button check" onMouseOver={() => setMouse(true) } onMouseOut={() => setMouse(false)}  >
         { mouse ? <AiOutlineCheckCircle/> :  <BsCircle />}

@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
-
 import { todoReducer as todo } from './Todo/reducer'
+import { themeReducer as theme } from './Theme/reducer'
 
-export const reducers = combineReducers({
-  todo
+export let reducers = combineReducers({
+  todo,
+  theme
 })
