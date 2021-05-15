@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Logo } from './Logo/Logo';
-import { Search } from './Search/Search';
+import { SearchInput } from './SearchInput/SearchInput';
 import { UserPanel } from './UserPanel/UserPanel';
 import { NavLink } from 'react-router-dom';
 import { SwitchTheme } from './SwitchTheme/SwitchTheme'
 import { LOGIN_ROUTE } from '../../utilities/consts';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { UserPhoto } from './UserPhoto/UserPhoto'
 import { auth } from '../../firebase/config';
 import './style.sass';
 
@@ -16,13 +17,12 @@ export function Header() {
       <Logo />
       {user ? (
         <>
-          <Search />
+          <SearchInput />
           <SwitchTheme />
           <UserPanel className="settings" />
           <UserPanel className="help" />
           <UserPanel className="aboutDev" />
-          <div style={{background:  ` url(${user.photoURL}) no-repeat`,
-                       backgroundSize: `3.5vh`}} className='user-photo' ></div>
+          <UserPhoto user={user}  />
           <button className="buttomExit" onClick={() => auth.signOut()}>
             exit
           </button>

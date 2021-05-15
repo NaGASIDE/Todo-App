@@ -48,4 +48,10 @@ export const SidebarData = [
     icon: <BiTask />,
     cName: 'nav-text'
   },
+  {
+    title: 'Search',
+    path: 'search',
+    icon: <BiTask />,
+    cName: 'nav-text'
+  },
 ]
