@@ -10,7 +10,7 @@ export function Modal( { open, children, onClose}) {
   return ReactDOM.createPortal((
     <div className="model" >
       <div className='model-plate'>
-      <button className='model-plate-button' onClick={onClose} ><AiOutlineClose /></button>
+      <button className='model-plate-button' onClick={onClose}  ><AiOutlineClose /></button>
      {children}
       </div>
     </div>),

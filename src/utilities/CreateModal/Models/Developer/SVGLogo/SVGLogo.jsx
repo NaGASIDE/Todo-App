@@ -3,6 +3,6 @@ import './style.sass'
 
 export const SVGLogo = ({photo}) => {
   return (
-  <div className={`${photo}`} />
+  <div className={`svg-logo ${photo}`} />
   )
 }

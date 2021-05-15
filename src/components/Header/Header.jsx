@@ -23,9 +23,6 @@ export function Header() {
           <UserPanel className="help" />
           <UserPanel className="aboutDev" />
           <UserPhoto user={user}  />
-          <button className="buttomExit" onClick={() => auth.signOut()}>
-            exit
-          </button>
         </>
       ) : (
         <NavLink to={LOGIN_ROUTE}>

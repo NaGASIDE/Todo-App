@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Modal } from '../../../utilities/CreateModal/Modal';
 import { FiSettings } from 'react-icons/fi';
 import { IoMdHelp } from 'react-icons/io';
-import { AiOutlineUser } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineClose } from 'react-icons/ai';
 import { Settings } from '../../../utilities/CreateModal/Models/Settings/Settings'
 import { Help } from '../../../utilities/CreateModal/Models/Help/Help'
 import { Developer } from '../../../utilities/CreateModal/Models/Developer/Developer'
@@ -24,10 +24,11 @@ export function UserPanel({ className }) {
         }
       </div>
       <Modal isOpen={isOpen} open={isOpen} onClose={() => setIsOpen(false)}>
-        {isSettings  ? <Settings /> : ``}
-        {isHelp      ? <Help /> : ``}
-        {isDeveloper ? <Developer /> : ``}
+            {isSettings  ? <Settings /> : ``}
+            {isHelp      ? <Help /> : ``}
+            {isDeveloper ? <Developer /> : ``}
       </Modal>
     </>
   );
 }
+

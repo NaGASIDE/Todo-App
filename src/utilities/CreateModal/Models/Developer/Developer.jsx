@@ -16,11 +16,11 @@ export const Developer = () => {
         Умею работать с такими технологиями как react.js, redux, javascript, typescript, react-router-dom, git, react-spring, sass, css, html.</p> 
       </div>
       <div className='developer-links developer-block' >
-        <FaWhatsappSquare />
-        <FaTelegram />
-        <SVGLogo photo={`vk-logo`}  />
-        <SVGLogo photo={`hh-logo`}  />
-        <FaDiscord />
+        <SVGLogo photo={`wtsap-logo`} />
+        <SVGLogo photo={`tele-logo`} />
+        <SVGLogo photo={`vk-logo`} />
+        <SVGLogo photo={`hh-logo`} />
+        <SVGLogo photo={`dis-logo`} />
       </div>
     </div>
   )
