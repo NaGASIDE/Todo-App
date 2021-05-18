@@ -34,13 +34,6 @@ export const SidebarData = [
     cName: 'nav-text'
 
   },
-  
-  {
-    title: 'Planed',
-    path: 'planed',
-    icon: <AiIcon.AiFillFlag />,
-    cName: 'nav-text'
-  },
  
   {
     title: 'Tasks',
