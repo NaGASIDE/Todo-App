@@ -5,8 +5,9 @@ import './style.sass';
 
 export const TodoList = () => {
   let todos = useSelector((state) => state.todo);
+
   return (
-    <div className={`todo-list`}>
+    <div className={`todo-list`} >
       {todos.map((todo) => {
         return <Todo key={todo.id} todo={todo} />;
       })}

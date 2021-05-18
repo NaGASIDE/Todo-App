@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { VscSearch } from 'react-icons/vsc';
-import { Search } from '../../Main/Pages/Search/Search'
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import './style.sass';
 

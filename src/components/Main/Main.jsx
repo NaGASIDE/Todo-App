@@ -5,7 +5,7 @@ import { MyDay } from './Pages/MyDay/MyDay';
 import { Important } from './Pages/Important/Important';
 import { Planed } from './Pages/Planed/Planed';
 import { Tasks } from './Pages/Tasks/Tasks'
-import { Search } from './Pages/Search/Search'
+import { Complite } from './Pages/Complite/Complite'
 import { useSelector } from 'react-redux'
 import './Main.sass';
 
@@ -23,7 +23,7 @@ export function Main() {
            <Route path='/todo/important' component={Important} />
            <Route path='/todo/planed' component={Planed} />
            <Route path='/todo/tasks' component={Tasks} />
-           <Route path='/todo/search' component={Search} />
+           <Route path='/todo/complite' component={Complite} />
        </Switch>
      </Router>
     </ThemeContext.Provider>

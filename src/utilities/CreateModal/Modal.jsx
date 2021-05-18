@@ -1,6 +1,5 @@
 import React from 'react'
 import { AiOutlineClose } from 'react-icons/ai'
-import { useSpring, animated } from 'react-spring'
 import ReactDOM from 'react-dom'
 import './style.sass'
 
@@ -14,5 +13,5 @@ export function Modal( { open, children, onClose}) {
      {children}
       </div>
     </div>),
-  document.getElementById('portal') )
+  document.getElementById('portal'))
 }

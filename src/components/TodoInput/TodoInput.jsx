@@ -20,7 +20,7 @@ export const TodoInput = () => {
           setName(e.target.value);
         }}
         onKeyPress={(e) => {
-          if (e.key == `Enter` && name.length > 5) {
+          if (e.key == `Enter` && name.length > 3) {
             dispatch(
               todoActions.addTodo({
                 id: uuid(),
@@ -35,7 +35,7 @@ export const TodoInput = () => {
         className="add-button"
         tabIndex={0}
         onClick={() => {
-          if (name.length > 5) {
+          if (name.length > 3) {
             dispatch(
               todoActions.addTodo({
                 id: uuid(),

@@ -1,12 +1,16 @@
 import React from 'react'
 import { SVGLogo } from './SVGLogo/SVGLogo'
 import { AiFillStar } from 'react-icons/ai'
-import { FaWhatsappSquare, FaTelegram, FaDiscord } from 'react-icons/fa'
+import { useSpring, animated } from 'react-spring'
 import './style.sass'
 
 export const Developer = () => {
+  const animate = useSpring({
+    to: {opacity: 1},
+    from: {opacity: 0}
+  })
   return (
-    <div className='developer' >
+    <animated.div className='developer' style={animate} >
       <h2 className='developer-title'>Developer</h2>
       <div className='developer-photo dev-photo-1' />
       <div className='developer-photo dev-photo-2' />
@@ -22,6 +26,6 @@ export const Developer = () => {
         <SVGLogo photo={`hh-logo`} />
         <SVGLogo photo={`dis-logo`} />
       </div>
-    </div>
+    </animated.div>
   )
 }

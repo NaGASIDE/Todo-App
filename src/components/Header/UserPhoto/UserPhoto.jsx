@@ -5,7 +5,6 @@ import './style.sass';
 
 export const UserPhoto = ({ user }) => {
   const [showLogoutPanel, setShowUserPanel] = useState(false);
-  console.log(user)
   return (
     <>
       <div

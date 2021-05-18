@@ -3,7 +3,7 @@ import { Login } from "../Login/Login";
 import { Main } from '../Main/Main'
 import * as FaIcon  from 'react-icons/fa'
 import * as AiIcon from 'react-icons/ai'
-import { BiTask } from 'react-icons/bi'
+import { BiTask, BiTaskX } from 'react-icons/bi'
 
 export const publicRoutes = [
   {
@@ -45,12 +45,12 @@ export const SidebarData = [
   {
     title: 'Tasks',
     path: 'tasks',
-    icon: <BiTask />,
+    icon: <BiTaskX />,
     cName: 'nav-text'
   },
   {
-    title: 'Search',
-    path: 'search',
+    title: 'Complite',
+    path: 'complite',
     icon: <BiTask />,
     cName: 'nav-text'
   },
