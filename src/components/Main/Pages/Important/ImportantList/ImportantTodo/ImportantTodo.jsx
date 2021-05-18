@@ -2,9 +2,10 @@ import React, { useState, useContext } from 'react';
 import { ThemeContext } from '../../../../Main'
 import { useDispatch } from 'react-redux';
 import { ComploteActions } from '../../../../../../store/Complite/action'
+import { todoActions } from '../../../../../../store/Todo/action'
 import { importantTodoActions }  from '../../../../../../store/Imporatnt/action'
 import { BsCircle, BsPencil, BsPlusCircle  } from 'react-icons/bs';
-import { AiOutlineStar, AiOutlineCheck} from 'react-icons/ai';
+import { AiFillStar, AiOutlineCheck} from 'react-icons/ai';
 import { RiDeleteBin6Line } from 'react-icons/ri'
 import { ContextMenu } from '../../../../../TodoList/Todo/ContextMenu/ContextMenu'
 import { CustomMenu } from '../../../../../TodoList/Todo/ContextMenu/CustomMenu/CustomMenu'
@@ -47,10 +48,10 @@ export const ImportantTodo = ({todo}) => {
          { editable ? <AiOutlineCheck />  : <BsPencil />}
       </button>
       <button className="todo-button todo-button-important" onClick={() => {
-        dispatch(importantTodoActions.addImportantTodo(todo));
+        dispatch(todoActions.addTodo(todo));
         dispatch(importantTodoActions.deleteImportantTodo(todo.id))
       }} >
-         <AiOutlineStar />
+         <AiFillStar />
       </button>
       <button className="todo-button todo-button-delete" onClick={() => dispatch(importantTodoActions.deleteImportantTodo(todo.id)) } >
         <RiDeleteBin6Line />
