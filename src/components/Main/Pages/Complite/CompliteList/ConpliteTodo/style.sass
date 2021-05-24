@@ -1,33 +1,71 @@
 .complite-todo
   height: 5vh
   width: 96.6vw
-  margin: 0vh 0vh 0.1vh 6vh
+  margin: 0vh 0vh 0.1vh 0vh
+  display: flex
+  flex-direction: row
   cursor: pointer
   background: white
   border-bottom: .1vh solid grey
   border-radius: .7vh
+  &:hover
+    background: #eee
 
 .complite-todo-text
-  margin: -3.5vh 1vh 1vh 5vh
+  margin-left: 1vh
+  margin-top: 1.7vh
+  flex-basis: 92.5vw
+  flex-shrink: 100
   text-decoration: line-through
 
 .complite-todo-button
+  margin-top: 1.3vh
+  margin-left: 1vh
   font-size: 2.5vh
-  margin: 1.35vh 1vh 1vh 1vh
 
 .complite-todo-trash
+  margin-bottom: 3vh
+  margin-top: 1.3vh
   font-size: 2.5vh
-  margin: -7vh 0vh 2vh 192.5vh
-
 
 .complite-todo-dark
   height: 5vh
   width: 96.6vw
-  margin: 0vh 0vh 0.1vh 6vh
+  margin: 0vh 0vh 0.1vh 0vh
   background: #ffffff00
   border-bottom: .1vh solid grey
   border-radius: .7vh
   &:hover
     background: #202027
+
+@media screen and ( max-width: 1460px )
+  .complite-todo
+    max-width: 95vw
+  .complite-todo-dark
+    max-width: 95vw
+
+@media screen and ( max-width: 1000px )
+  .complite-todo
+    max-width: 93vw
+  .complite-todo-dark
+    max-width: 93vw
+
+@media screen and ( max-width: 700px )
+  .complite-todo
+    max-width: 90vw
+  .complite-todo-dark
+    max-width: 90vw
+
+@media screen and ( max-width: 500px )
+  .complite-todo
+    max-width: 88vw
+  .complite-todo-dark
+    max-width: 88vw
+
+@media screen and ( max-width: 390px )
+  .complite-todo
+    max-width: 85vw
+  .complite-todo-dark
+    max-width: 85vw
 
 

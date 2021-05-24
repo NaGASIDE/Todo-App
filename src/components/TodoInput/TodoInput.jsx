@@ -10,7 +10,7 @@ export const TodoInput = () => {
   let dispatch = useDispatch();
   let [name, setName] = useState();
   return (
-    <div>
+    <div className={`todo-input-div`} >
       <input
         className={`todo-input ${theme} `}
         type="text"

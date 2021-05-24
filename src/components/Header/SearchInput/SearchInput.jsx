@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { VscSearch } from 'react-icons/vsc';
-import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import './style.sass';
 
 export function SearchInput() {

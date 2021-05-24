@@ -2,22 +2,39 @@
   margin: 1vh auto
   outline: none
   padding: 0vh 0vw 0vh 1.7vw
-  width: 38vh
   border: 0
   transition-property: background width
   background: #2b3352
   border-radius: .5vh
   &:hover
     transition-duration: .5s
-    width: 39vh
+    width: 40vh
     background: #ffff 
   &:not(:hover)
     transition-duration: .5s
-    width: 38vh
+    width: 40vh
     background: #2b3352
   &:focus
-    width: 39vh
     background: #ffff 
+
+@media screen and ( max-width: 670px )
+  .input
+      max-width: 30vh
+
+@media screen and ( max-width: 580px )
+  .input
+      max-width: 25vh
+
+@media screen and ( max-width: 540px )
+  .input
+      max-width: 9vh
+
+@media screen and ( max-width: 400px )
+  .input
+      max-width: 9vh
+      margin-left: 1vh
+
+  
 
 .search-icon
   margin: 1.6vh 0vh 0vh 76.2vh

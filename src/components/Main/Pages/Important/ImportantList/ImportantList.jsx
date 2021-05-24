@@ -12,7 +12,7 @@ export const ImportantList = () => {
   if (importantTodos.length > 3) {s = `none` }
 
   return (
-    <div className={`todo-list todo-list-${theme}` } style={{background: s}} >
+    <div className={`important-todo-list important-todo-list-${theme}` } style={{background: s}} >
       {importantTodos.map((importantTodo) => {
         return <ImportantTodo key={importantTodo.id} todo={importantTodo} />;
       })}

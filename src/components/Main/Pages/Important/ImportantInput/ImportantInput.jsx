@@ -10,9 +10,9 @@ export const ImportantInput = () => {
   let dispatch = useDispatch();
   let [name, setName] = useState();
   return (
-    <div>
+    <div className={`important-todo-input-div`} >
       <input
-        className={`todo-input ${theme} `}
+        className={`important-todo-input ${theme} `}s
         type="text"
         placeholder="  Add a task"
         value={name}
@@ -32,7 +32,7 @@ export const ImportantInput = () => {
         }}
       />
       <button
-        className="add-button"
+        className="important-add-button"
         tabIndex={0}
         onClick={() => {
           if (name.length > 3) {

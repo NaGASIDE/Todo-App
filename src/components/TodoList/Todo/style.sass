@@ -3,14 +3,39 @@
   src: url(../../../assets/fonts/norm.otf)
 
 .todo
+  height: 4.3vh
+  width: 96vw
   border-top: .1vh solid grey
   background: #ffffff00
-  height: 4.3vh
-  display: block
   cursor: pointer
   border-radius: .2vh
+  display: flex
+  flex-direction: row
+  margin-left: 1vw
   &:hover
     background: #e0e0e0ee
+
+
+@media screen and ( max-width: 900px )
+  .todo
+    max-width: 94vw
+    margin-left: 2vw
+  .todo-dark
+    max-width: 94vw
+
+@media screen and ( max-width: 600px )
+  .todo
+    max-width: 92vw
+    margin-left: 2vw
+  .todo-dark
+    max-width: 92vw
+
+@media screen and ( max-width: 450px )
+  .todo
+    max-width: 90vw
+    margin-left: 2vw
+  .todo-dark
+    max-width: 90vw
 
 .todo-button
   margin: .5vh 0vh 0vh 0vh
@@ -21,8 +46,10 @@
   border: 0
   cursor: pointer
   display: inline-block
+  align-self: flex-end
 
 .todo-button-edit
+  align-items: flex-end
   color: #200505
 
 .check
@@ -32,19 +59,20 @@
 .todo-button-delete
   color: #200505
 
+
 .todo-text
-  font-family: pribambas
-  width: 176.5vh
+  flex-basis: 90vw
+  flex-shrink: 100
   display: inline-block
-  margin: .6vh 0vh 0vh 1vh
+  margin: 1.1vh
+  font-family: pribambas
   font-size: 1.8vh
   cursor: pointer
 
 .todo-text-edit
   height: 3vh
-  width: 170vh
+  width: 86.5vw
   display: inline-block
-  margin: -0.2vh 0vh 0vh 0vh
   font-size: 2.8vh
   border-radius: .7vh
 
@@ -55,11 +83,13 @@
   border-top: .1vh solid grey
   background: #ffffff00
   height: 4.3vh
-  display: block
+  width: 95.89vw
+  display: flex
   cursor: pointer
   border-radius: .2vh
   &:hover
     background: #202027
+
 
 .todo-focus
   background: #32c0e475

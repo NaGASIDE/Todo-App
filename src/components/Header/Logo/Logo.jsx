@@ -3,6 +3,7 @@ import { useSpring, animated } from 'react-spring'
 import './style.sass'
 
 export function Logo() {
+
   const props = useSpring({
     to: { opacity: 1 },
     from: { opacity: 0 },

@@ -15,7 +15,9 @@ export const UserPhoto = ({ user }) => {
       <LogOutModal isOpen={showLogoutPanel} open={showLogoutPanel} onClose={() => setShowUserPanel(false)}>
         <div className="logout-modal">
           <div className={`logout-logo`}>Bekzat Ashken TO-DO</div>
-          <button className="logout-button" onClick={() => auth.signOut()} >Sing Out</button>
+          <button className="logout-button" onClick={() => auth.signOut()}>
+            Sing Out
+          </button>
           <div
             className={`logout-modal-user-photo`}
             className="user-photo"
@@ -29,7 +31,7 @@ export const UserPhoto = ({ user }) => {
           ></div>
           <div className="logout-modal-block">
             <p>{user.displayName}</p>
-            <hr/>
+            <hr />
             <p>{user.email}</p>
           </div>
         </div>
