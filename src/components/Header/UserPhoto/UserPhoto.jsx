@@ -32,7 +32,7 @@ export const UserPhoto = ({ user }) => {
           <div className="logout-modal-block">
             <p>{user.displayName}</p>
             <hr />
-            <p>{user.email}</p>
+            <p className={`user-email`}>{user.email}</p>
           </div>
         </div>
       </LogOutModal>

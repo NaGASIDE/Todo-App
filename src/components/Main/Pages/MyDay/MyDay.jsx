@@ -15,8 +15,8 @@ export function MyDay() {
     <div className={`myday ${themeContext}`} >
        <h1 className={`myday-title  ${themeContext}`} >MyDay</h1>
        <Date />
-       <Sort />
-       <Suggestions />
+       {/* <Sort />
+       <Suggestions /> */}
        <TodoInput />
        <TodoList />
     </div>

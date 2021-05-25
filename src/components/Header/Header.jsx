@@ -19,7 +19,7 @@ export function Header() {
         <>
           <SearchInput />
           <SwitchTheme />
-          <UserPanel className="settings" />
+          {/* <UserPanel className="settings" /> */}
           <UserPanel className="help" />
           <UserPanel className="aboutDev" />
           <UserPhoto user={user}  />
