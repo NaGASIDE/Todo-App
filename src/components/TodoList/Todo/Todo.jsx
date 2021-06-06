@@ -24,11 +24,6 @@ export const Todo = ({todo}) => {
     from: { opacity: 0 }
   })
 
-
-  // Сейчас можно отмечать каждое TODO, не зависимо от того отмнчен ли другой. Сделай так чтобы когда отмечался другой TODO,
-  // у преведущёго стили снимались. Моя ошибка сорян :3
-  // я полумал и придумал способ со следующим числом, скорее всего это нужно делать через store
-
   return (
     <animated.div className={`${todoFocus ? `todo-focus` : `` } todo todo-${theme}`} style={animate} onClick={() => setTodoFocus(!todoFocus)} >
       <ContextMenu menu={<CustomMenu />} />

@@ -1,6 +1,8 @@
 import React, {useState, useCallback, useEffect} from 'react'
+import { useSelector }  from 'react-redux'
 
 export const useContextMenu = () => {
+
   const [xPos, setXPos] = useState("0px");
   const [yPos, setYPos] = useState("0px");
   const [showMenu, setShowMenu] = useState(false);
@@ -29,5 +31,5 @@ export const useContextMenu = () => {
     };
   });
 
-  return { xPos, yPos, showMenu };
+  return { xPos, yPos, showMenu};
 };

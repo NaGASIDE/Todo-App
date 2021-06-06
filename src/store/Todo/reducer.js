@@ -1,5 +1,5 @@
 import { todosActionsTypes } from './action';
-import { todos } from './states'
+import { todos } from './state'
 
 export const todoReducer = (state = todos, action) => {
   let newTodos;
